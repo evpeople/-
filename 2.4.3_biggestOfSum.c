@@ -65,7 +65,7 @@ int fenzhi(const int a[],int left,int right)
     //下面为基准情形，用于退出递归
     if (left==right)
     {
-        if (a[left]>0)
+        if (a[left])
         {
             return a[left];
         }else
@@ -78,11 +78,9 @@ int fenzhi(const int a[],int left,int right)
     maxOfLeft=fenzhi(a,left,center);//通过递归求出纯左边的最大子序列
     maxOfRight=fenzhi(a,center+1,right);//通过递归求出纯右边的最大子序列
 
-//上面两行的结果用于与下面的结果进行比较。
-
     maxLeftB=0;
     leftBSum=0;
-    for ( i = center; i >= left; i--)//求出特定情形下的左边包含结尾的子序列的值
+    for ( i = center; i >= left; i--)
     {
         leftBSum+=a[i];
         if (leftBSum>maxLeftB)
@@ -93,7 +91,7 @@ int fenzhi(const int a[],int left,int right)
 
     maxRightB=0;
     rightBSum=0;
-    for ( i = center+1; i <= right; i++)//求出特定情形下右边包含第一个的子序列的值
+    for ( i = center+1; i <= right; i++)
     {
         rightBSum+=a[i];
         if (rightBSum>maxRightB)
@@ -102,12 +100,32 @@ int fenzhi(const int a[],int left,int right)
         }
 
     }
-   return max3(maxOfLeft,maxOfRight,maxRightB+maxLeftB);
-    //任意一边的最大子序列都包含左边，右边，和中间的三种情况，最大即为三者中最大的那个。
+   return max3(maxOfLeft,maxOfRight,maxRightB+maxLeftB) ;
+    
 }
 int fengz(const a[],int n)
 {
     return fenzhi(a,0,n-1);
+}
+int changliangshijiansuanfa(const int a[],int n)
+{
+
+    int sum=0,max=0;
+    for (size_t i = 0; i < n; i++)
+    {
+        sum+=a[i];
+
+        if (sum>max)
+        {
+            max=sum;
+        }else if (sum<0)
+        {
+            sum=0;
+        }
+        
+        
+    }
+    
 }
 int main(void)
 {
