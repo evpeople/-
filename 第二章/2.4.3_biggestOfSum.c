@@ -107,7 +107,7 @@ int fengz(const a[],int n)
 {
     return fenzhi(a,0,n-1);
 }
-int changliangshijiansuanfa(const int a[],int n)
+int xianxingjiansuanfa(const int a[],int n)
 {
 
     int sum=0,max=0;
