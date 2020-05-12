@@ -16,7 +16,7 @@ int nOfCubed (const int a[],int n)
                 sum+=a[k];
             }
             if (sum>maxsum)
-            {
+           {
                 maxsum=sum;
             }
             

@@ -1,5 +1,16 @@
 //常见的操作，打印ADT，删除ADT，找到首次出现的位置，插入删除，返回特定位置的元素
-//对于数组，插入删除慢，需要知道总元素的个数。
+//对于数组，插入删除慢，需要知道总元素的个数
+include<stdio.h>
+typedef long long ll;
+const int maxn = 1000;
+
+
+
+int main(void)
+{
+    
+return 0;
+}
 #include<stdio.h>
  struct node
  {
